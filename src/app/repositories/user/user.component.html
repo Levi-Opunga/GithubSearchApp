@@ -1,11 +1,15 @@
 <app-search-form (emittingUser)="gettingUser($event)"></app-search-form>
-<br>
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-3 offset-1"  *ngIf="users">
     <img src="{{users.avatar_url}}" alt="user profile">
   </div>
-  <div class="col-md-4">
-    <h1>{{users.login}}</h1>
-    <p>{{users.created_at|date}}</p>
+  <div class="col-md-7 offset-1" *ngIf="users">
+    <h1>Username : {{users.login}}</h1>
+    <p>Created on : {{users.created_at|date}}</p>
+    <p>Followers on github : {{users.followers}}</p>
+    <p>{{users.name}}</p>
+    <a href="{{users.html_url}}">Link to Github</a>
+    <p>Name : {{users.name}}</p>
+    <p></p>
   </div>
 </div>

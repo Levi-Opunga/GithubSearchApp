@@ -11,15 +11,15 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit {
 users!:userdetails
 
+
   gettingUser(users: any){
     this.users = users
   }
 
   ngOnInit(): void {
-    interface userinfo{
-
-    }
 
 
 
-}}
+
+
+  }}

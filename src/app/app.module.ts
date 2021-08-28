@@ -9,12 +9,14 @@ import { UserComponent } from './repositories/user/user.component';
 import { SearchFormComponent } from './repositories/user/search-form/search-form.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     RepositoriesComponent,
     UserComponent,
-    SearchFormComponent
+    SearchFormComponent,
+
   ],
   imports: [
 

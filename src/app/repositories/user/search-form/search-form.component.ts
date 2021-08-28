@@ -8,22 +8,23 @@ import{userdetails} from "../../../userInterface";
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  searchedUser: string="Levi-Opunga"
-
-  ngOnInit(): void {
-
-    this.outputUser()
-  }
-
-  @Output() emittingUser = new EventEmitter<any>();
+  searchedUser!: string;
   users!: userdetails;
-
+  @Output() emittingUser = new EventEmitter<any>();
   constructor(private userinfoService: UseInfoService) {
   }
+  ngOnInit(){
+    this.outputUser()
+    this.outputUser()
+    this.userinfoService.getData("Levi-Opunga").subscribe((data) => {
+      console.log(data)
+      this.users = data
+    })
+    this.emittingUser.emit(this.users)
+    this.searchedUser = ""
 
 
-
-
+  }
   outputUser() {
     this.userinfoService.getData(this.searchedUser).subscribe((data) => {
       console.log(data)
@@ -32,5 +33,12 @@ export class SearchFormComponent implements OnInit {
     this.emittingUser.emit(this.users)
     this.searchedUser = ""
   }
-}
+
+
+
+  }
+
+
+
+
 
