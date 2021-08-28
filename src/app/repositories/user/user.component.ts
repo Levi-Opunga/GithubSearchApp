@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http"
-import{Userdetails} from"../../userdetails"
+import{UseInfoService} from "../../useinfo.service"
 
 @Component({
   selector: 'app-user',
@@ -9,22 +8,17 @@ import{Userdetails} from"../../userdetails"
 })
 export class UserComponent implements OnInit {
 user!:string;
-  constructor(private http:HttpClient) { }
+  constructor(private userinfoService:UseInfoService){ }
+getUser(){
+    this.userinfoService.getData().subscribe((data)=>{console.log(data)})
+}
 
-userinfo!:Userdetails[];
-  levi!:Userdetails;
+  gettingUser(users: string){
+    this.user = users
+  }
 
   ngOnInit(): void {
-  interface ApiResponse {
-  avatar_url:string;
-  html_url:string;
-}
-    this.http.get<ApiResponse>("https://api.github.com/users/Levi-Opunga").subscribe(data=>{
-      this.userinfo.push (this.levi =new Userdetails(data.html_url,data.avatar_url))
-    })
+
   }
 
-  gettingUser(gottenUser: string) {
-    this.user = gottenUser
-  }
 }

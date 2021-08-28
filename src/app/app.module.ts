@@ -17,6 +17,7 @@ import { SearchFormComponent } from './repositories/user/search-form/search-form
     SearchFormComponent
   ],
   imports: [
+
     BrowserModule,
     FormsModule,
     HttpClientModule

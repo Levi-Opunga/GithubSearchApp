@@ -1,6 +1,4 @@
 <app-search-form (emittingUser)="gettingUser($event)"></app-search-form>
 <p>{{user}}</p>
-<div *ngFor="let users of userinfo">
-<div>{{levi.html_url|json}}</div>
-<div>{{levi.avatar_url |json}}</div>
-</div>
+
+<button (click)="getUser()">data</button>
