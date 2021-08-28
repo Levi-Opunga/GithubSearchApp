@@ -1,6 +1,6 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {UseInfoService} from "../../../useinfo.service";
-
+import{userdetails} from "../../../userInterface";
 
 @Component({
   selector: 'app-search-form',
@@ -8,15 +8,20 @@ import {UseInfoService} from "../../../useinfo.service";
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  searchedUser!: string;
-  @Output() emittingUser = new EventEmitter<string[]>();
-  users!: string[];
+  searchedUser: string="Levi-Opunga"
+
+  ngOnInit(): void {
+
+    this.outputUser()
+  }
+
+  @Output() emittingUser = new EventEmitter<any>();
+  users!: userdetails;
 
   constructor(private userinfoService: UseInfoService) {
   }
 
-  ngOnInit(): void {
-  }
+
 
 
   outputUser() {

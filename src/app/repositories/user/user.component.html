@@ -1,4 +1,11 @@
 <app-search-form (emittingUser)="gettingUser($event)"></app-search-form>
-<p>{{user}}</p>
-
-
+<br>
+<div class="row">
+  <div class="col-md-5">
+    <img src="{{users.avatar_url}}" alt="user profile">
+  </div>
+  <div class="col-md-4">
+    <h1>{{users.login}}</h1>
+    <p>{{users.created_at|date}}</p>
+  </div>
+</div>

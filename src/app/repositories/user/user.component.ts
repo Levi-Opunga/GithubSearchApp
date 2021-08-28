@@ -1,3 +1,5 @@
+import{userdetails} from "../../userInterface";
+
 import { Component, OnInit } from '@angular/core';
 
 
@@ -7,15 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-user!:string;
+users!:userdetails
 
-
-  gettingUser(users: string){
-    this.user = users
+  gettingUser(users: any){
+    this.users = users
   }
 
   ngOnInit(): void {
+    interface userinfo{
 
-  }
+    }
 
-}
+
+
+}}
