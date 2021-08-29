@@ -1,7 +1,7 @@
 
 
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-
-
-
+<app-navbar (click)="hideRepos(false)"></app-navbar>
+<br>
+<app-repositories *ngIf="hide"></app-repositories>
+<router-outlet ></router-outlet>
+<app-footer></app-footer>

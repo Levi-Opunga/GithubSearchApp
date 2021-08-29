@@ -1,15 +1,16 @@
 <app-user (emittingUser)="userName($event)"></app-user>
-<div><span class="d-block text-center"> <button type="button" class="btn btn-primary" (click)="showRepos()">Show Repositories</button></span>
+<br>
+<div><span class="d-block text-center"> <button type="button" class="btn btn-success" (click)="showRepos()">Show Repositories</button></span>
 </div>
 <h1 *ngIf="Repo" class="display-2 text-center">Github Repositories</h1>
 <div class="mb-4">
   <div class="container">
     <div class="row">
       <div class="col-md-10 offset-1 text-center" *ngFor='let repo of Repo,let i =index'>
-        <div class="card" appHovering>
+        <div class="card"appHighlight >
           <div class="card-content">
-            <br>
-            <h2 class="display-4">
+
+            <h2 class="display-4  card-header">
               Repository Name :  {{repo.name|uppercase}}
             </h2>
             <br>

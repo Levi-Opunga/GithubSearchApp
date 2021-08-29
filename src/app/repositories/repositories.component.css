@@ -1,11 +1,12 @@
-button{
-  background-color:blue;
-}
+
 h2{
   text-transform: capitalize;
   text-decoration: underline;
 }
 .card{
   padding-bottom: 20px;
-  background-color:mediumaquamarine;
+
+}
+.card-header{
+  background-color: grey;
 }

@@ -9,14 +9,14 @@ import{UseInfoService} from'../../useinfo.service'
 })
 export class UserComponent implements OnInit {
   users!: userdetails
-  username!: string
+
   @Output() emittingUser = new EventEmitter<string>();
 
   constructor(private userService:UseInfoService) { }
 
 
   ngOnInit(): void {
-    this.userService.getData();
+    this.userService.getData()
   }
 
 

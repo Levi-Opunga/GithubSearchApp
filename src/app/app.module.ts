@@ -10,9 +10,11 @@ import { UserComponent } from './repositories/user/user.component';
 import { SearchFormComponent } from './repositories/user/search-form/search-form.component';
 import { DaysagoPipe } from './pipes/daysago.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 const routes: Routes = [
-  { path: 'home', component: RepositoriesComponent },
+  { path: 'home', component: RepositoriesComponent},
   {path: 'repositories', component: RepositoriesComponent},
   {path:'user', component:UserComponent }
 ];
@@ -25,6 +27,8 @@ const routes: Routes = [
     SearchFormComponent,
     DaysagoPipe,
     NavbarComponent,
+    FooterComponent,
+    HighlightDirective,
 
   ],
   imports: [

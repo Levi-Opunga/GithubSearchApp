@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GithubSearchApp';
+  hide: boolean= true;
+
+  hideRepos(show: boolean) {
+    this.hide= show
+  }
 }
