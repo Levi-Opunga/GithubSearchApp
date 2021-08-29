@@ -1,5 +1,7 @@
 # GithubSearchApp
 This is an angular-based application that allows a user to search for a Github user and find their personal info and can be able to see a list of repositories when they click the show repositories button.
+>>Site preview on [GITHUB PAGES](https://levi-opunga.github.io/GithubSearchApp/)
+>>Site preview also available on [Netlify Environment](https://amazing-hypatia-4a25d6.netlify.app/) 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
