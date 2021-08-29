@@ -1,6 +1,6 @@
 import{userdetails} from "../../userInterface";
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 users!:userdetails
-
+  @Output() userForRepo =new EventEmitter<string>();
 
   gettingUser(users: any){
     this.users = users
@@ -22,4 +22,9 @@ users!:userdetails
 
 
 
-  }}
+  }
+
+  passingToRepo(searchedUser: string) {
+    this.userForRepo.emit(searchedUser)
+  }
+}

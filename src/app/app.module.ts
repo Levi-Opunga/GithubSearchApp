@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { UserComponent } from './repositories/user/user.component';
 import { SearchFormComponent } from './repositories/user/search-form/search-form.component';
+import { DaysagoPipe } from './pipes/daysago.pipe';
 
 
 
@@ -16,6 +17,7 @@ import { SearchFormComponent } from './repositories/user/search-form/search-form
     RepositoriesComponent,
     UserComponent,
     SearchFormComponent,
+    DaysagoPipe,
 
   ],
   imports: [

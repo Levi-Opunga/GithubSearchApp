@@ -5,13 +5,13 @@ import {environment} from "../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class UseInfoService {
+export class RepositoriesService {
 
 
   constructor(private http:HttpClient) { }
 
-  getData(searchName:string):Observable<any> {
-    let url = "https://api.github.com/users/" +searchName + '/repos?access_token=' +environment.myApi
-    return this.http.get<any>(url)
+  getRepo(searchedUser:string):Observable<[]>{
+    let url = "https://api.github.com/users/" + "levi" + '/repos?order=created&sort=asc?access_token='+ "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"
+    return this.http.get<[]>(url)
   }
 }

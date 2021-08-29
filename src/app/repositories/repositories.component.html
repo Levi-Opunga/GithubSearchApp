@@ -1,1 +1,33 @@
-<app-user></app-user>
+<app-user (userForRepo)="userName($event)"></app-user>
+<div><span class="d-block text-center"> <button type="button" class="btn btn-primary" (click)="showRepos()">Show Repositories</button></span>
+</div>
+  <h2>Github Repositories</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" *ngFor='let repo of Repo'>
+        <div class="card" appHovering>
+          <div class="ca1">
+            <p>
+              {{repo.name}}
+            </p>
+          </div>
+          <hr>
+          <p>
+            {{repo.created_at|daysago}}
+          </p>
+
+          <p>
+            {{repo.language}}
+          </p>
+          <p>
+            {{repo.created_at}}
+          </p>
+          <hr>
+          <div class="card-footer text-center">
+            <a href="{{repo.html_url}}" class="btn btn-success" target="_blank">View on Github </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
