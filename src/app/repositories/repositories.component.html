@@ -1,4 +1,4 @@
-<app-user (userForRepo)="userName($event)"></app-user>
+<app-user (emittingUser)="userName($event)"></app-user>
 <div><span class="d-block text-center"> <button type="button" class="btn btn-primary" (click)="showRepos()">Show Repositories</button></span>
 </div>
   <h2>Github Repositories</h2>
@@ -31,3 +31,4 @@
       </div>
     </div>
 </div>
+<h1 class="display-1">{{user}}</h1>

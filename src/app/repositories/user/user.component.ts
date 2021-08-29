@@ -1,7 +1,6 @@
-import{userdetails} from "../../userInterface";
-
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
-
+import {userdetails} from "../../userInterface";
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import{UseInfoService} from'../../useinfo.service'
 
 @Component({
   selector: 'app-user',
@@ -9,22 +8,21 @@ import { Component, OnInit,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-users!:userdetails
-  @Output() userForRepo =new EventEmitter<string>();
+  users!: userdetails
+  username!: string
+  @Output() emittingUser = new EventEmitter<string>();
 
-  gettingUser(users: any){
-    this.users = users
-  }
+  constructor(private userService:UseInfoService) { }
+
 
   ngOnInit(): void {
-
-
-
-
-
+    this.userService.getData();
   }
 
-  passingToRepo(searchedUser: string) {
-    this.userForRepo.emit(searchedUser)
-  }
-}
+
+  userName(username: string) {
+    this.emittingUser.emit(username)
+    this.userService.getData(username).subscribe((data) => {
+      this.users = data
+  })
+}}

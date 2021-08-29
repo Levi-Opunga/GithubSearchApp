@@ -10,7 +10,7 @@ export class UseInfoService {
 
   constructor(private http:HttpClient) { }
 
-  getData(searchName:string):Observable<any> {
+  getData(searchName:string="levi-opunga"):Observable<any> {
     let url = "https://api.github.com/users/" + searchName+'?access_token=' + environment.myApi
     return this.http.get<any>(url)
   }

@@ -9,27 +9,16 @@ import{userdetails} from "../../../userInterface";
 })
 export class SearchFormComponent implements OnInit {
   searchedUser!: string;
-  users!: userdetails;
-  @Output() emittingUser = new EventEmitter<any>();
+
+
   @Output() userForRepo =new EventEmitter<string>();
-  constructor(private userinfoService: UseInfoService) {
-  }
+
+
   ngOnInit(){
-    this.userinfoService.getData("Levi-Opunga").subscribe((data) => {
-
-      this.users = data
-    })
-    this.emittingUser.emit(this.users)
-
-
-
+    this.userForRepo.emit(this.searchedUser)
 
   }
   outputUser() {
-    this.userinfoService.getData(this.searchedUser).subscribe((data) => {
-      this.users = data
-    })
-    this.emittingUser.emit(this.users)
     this.userForRepo.emit(this.searchedUser)
 
   }

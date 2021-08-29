@@ -10,8 +10,8 @@ export class RepositoriesService {
 
   constructor(private http:HttpClient) { }
 
-  getRepo(searchedUser:string):Observable<[]>{
-    let url = "https://api.github.com/users/" + "levi" + '/repos?order=created&sort=asc?access_token='+ "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"
+  getRepo(searchedUser:string="levi-opunga"):Observable<[]>{
+    let url = "https://api.github.com/users/" + searchedUser + '/repos?order=created&sort=asc?access_token='+ environment.myApi
     return this.http.get<[]>(url)
   }
 }

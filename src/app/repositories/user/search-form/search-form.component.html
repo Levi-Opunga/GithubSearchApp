@@ -1,5 +1,5 @@
 
-<form class="text-center " (mouseenter)="outputUser()">
+<form class="text-center col-md-11" >
   <div class="form-group">
     <label for="name">Name</label>
     <span class="d-block text-center"> <input type="text" required class="form-control" id="name" name="search" [(ngModel)]="searchedUser">
@@ -7,4 +7,4 @@
   <br>
   <span class="d-block text-center"><button type="button" class="btn btn-primary" (click)="outputUser()" >Search</button></span>
 </form>
-<div>{{searchedUser}}</div>
+

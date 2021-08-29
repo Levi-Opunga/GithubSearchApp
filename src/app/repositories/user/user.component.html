@@ -1,4 +1,4 @@
-<app-search-form (emittingUser)="gettingUser($event)" (userForRepo)="passingToRepo($event)"></app-search-form>
+<app-search-form  (userForRepo)="userName($event)" ></app-search-form>
 <div class="row">
   <div class="col-md-3 offset-1"  *ngIf="users">
     <img src="{{users.avatar_url}}" alt="user profile">
@@ -14,3 +14,4 @@
   </div>
 </div>
 
+<h1 class="display-1"> {{username}}</h1>
