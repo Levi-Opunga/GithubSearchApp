@@ -1,5 +1,5 @@
 <app-search-form  (userForRepo)="userName($event)" ></app-search-form>
-<div class="row">
+<div class="row container-fluid">
   <div class="col-md-3 offset-1"  *ngIf="users">
     <img src="{{users.avatar_url}}" alt="user profile">
   </div>
@@ -8,10 +8,11 @@
     <p>Created on : {{users.created_at|date}}</p>
     <p>Followers on github : {{users.followers}}</p>
     <p>{{users.name}}</p>
-    <a href="{{users.html_url}}">Link to Github</a>
+    <a class="btn btn-success mb-4" href="{{users.html_url}}">Link to Github Account</a>
+    <br>
+
     <p>Name : {{users.name}}</p>
     <p></p>
   </div>
 </div>
 
-<h1 class="display-1"> {{username}}</h1>

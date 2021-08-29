@@ -1,34 +1,48 @@
 <app-user (emittingUser)="userName($event)"></app-user>
 <div><span class="d-block text-center"> <button type="button" class="btn btn-primary" (click)="showRepos()">Show Repositories</button></span>
 </div>
-  <h2>Github Repositories</h2>
+<h1 *ngIf="Repo" class="display-2 text-center">Github Repositories</h1>
+<div class="mb-4">
   <div class="container">
     <div class="row">
-      <div class="col-md-6" *ngFor='let repo of Repo'>
+      <div class="col-md-10 offset-1 text-center" *ngFor='let repo of Repo,let i =index'>
         <div class="card" appHovering>
-          <div class="ca1">
-            <p>
-              {{repo.name}}
-            </p>
+          <div class="card-content">
+            <br>
+            <h2 class="display-4">
+              Repository Name :  {{repo.name|uppercase}}
+            </h2>
+            <br>
           </div>
-          <hr>
-          <p>
-            {{repo.created_at|daysago}}
-          </p>
 
+          <h4>
+            Project Description
+          </h4>
+          <p>{{repo.description}}</p>
+          <h4> Created </h4>
+          <p>
+            {{repo.created_at|daysago}} on {{repo.created_at|date}}
+          </p>
+          <h4>Technologies </h4>
           <p>
             {{repo.language}}
           </p>
+          <h4>Last Updated</h4>
           <p>
-            {{repo.created_at}}
+            {{repo.updated_at|daysago}}
           </p>
-          <hr>
-          <div class="card-footer text-center">
+          <h4>Number of forks</h4>
+          <p><b>{{repo.forks}}</b></p>
+
+          <div class=" text-center">
             <a href="{{repo.html_url}}" class="btn btn-success" target="_blank">View on Github </a>
+            <br><br>
           </div>
         </div>
 
       </div>
     </div>
+  </div>
 </div>
-<h1 class="display-1">{{user}}</h1>
+
+<br><br>
